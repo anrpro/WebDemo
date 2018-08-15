@@ -18,7 +18,8 @@ namespace WebDemo.Controllers
                                     "Content",
                                     "App_Start",
                                     "App_Code",
-                                    "App_Data"
+                                    "App_Data",
+                                    "fonts"
                                 };
             return View(mvcList);
         }
