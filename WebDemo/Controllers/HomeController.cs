@@ -20,7 +20,11 @@ namespace WebDemo.Controllers
                 authuser.IsAuthenticated.ToString(),
                 authuser.IsGuest.ToString(),
                 authuser.IsSystem.ToString(),
-                authuser.Name.ToString()
+                authuser.Name.ToString(),
+                authuser.AuthenticationType,
+                authuser.Label,
+                authuser.User.Value
+
 
                                 };
             return View(mvcList);
