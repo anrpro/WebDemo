@@ -1,0 +1,39 @@
+﻿@model WebDemo.Models.CustomerInfo
+
+@{
+    ViewBag.Title = "UpdateCustomer";
+}
+
+<h2>UpdateCustomer</h2>
+
+@using (Html.BeginForm("UpdateCustomer", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div>
+    @Html.HiddenFor(c => c.Id)<br />
+    @Html.TextBoxFor(c => c.Name)<br />
+    @Html.TextBoxFor(c => c.Email)<br />
+
+
+    @if (Model.attachments.Count == 0)
+    {
+        <input id="cheque" name="files" type="file" /><br />
+        <input id="pan" name="files" type="file" /><br />
+        <input id="aadhaar" name="files" type="file" /><br />
+    }
+    else
+    {
+        <ul>
+            @foreach (string file in Model.attachments)
+            {
+                <li>@file</li>
+            }
+        </ul>
+    }
+    <br />
+    <button type="submit">Save</button>
+
+</div>
+
+
+}
+
